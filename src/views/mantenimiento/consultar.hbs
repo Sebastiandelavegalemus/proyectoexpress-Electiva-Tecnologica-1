@@ -1,0 +1,103 @@
+<div class="col-md-8 mx-auto">
+            <div class="card-body">
+                <h1 class="text-center">Mantenimiento</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>                            
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Serial</th>
+                            <th scope="col">Fecha De Recibido</th>
+                            <th scope="col">Fecha De Entrega</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col" class="text-center">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each mate}}
+                        <tr>
+                            <th scope="row">{{id_usuario}}</th>                            
+                            <td>{{nombre}}</td>
+                            <td>{{producto}}</td>
+                            <td>{{serial}}</td>
+                            <td>{{fecha_recibido}}</td>
+                            <td>{{fecha_entrega}}</td>
+                            <td>{{estado}}</td>             
+                            <td>
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modificar11{{id_usuario}}">
+                                Modificar
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modificar11{{id_usuario}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <form action="/mantenimiento/modificar11/{{id_usuario}}" method="POST">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                    
+                                
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Usuario</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    name="nombre" value="{{nombre}}"> 
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Producto</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    name="producto" value="{{producto}}"> 
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Serial</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    name="serial" value="{{serial}}" >
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Fehca De Recibido</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    name="fecha_recibido" value="{{fecha_recibido}}" >
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Fehca De Entrega</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    name="fecha_entrega" value="{{fech_entrega}}" >
+                                            </div>  
+
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Estado</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    name="estado" value="{{estado}}" >
+                                            </div>    
+
+                                            </div>     
+                                            <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+                                                    <button type="submit" class="btn btn-primary">Modificar</button>
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            <a href="delete/{{id_usuario}}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

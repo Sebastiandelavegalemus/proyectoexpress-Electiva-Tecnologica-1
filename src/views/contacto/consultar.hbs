@@ -1,0 +1,36 @@
+<div class="col-md-8 mx-auto">
+            <div class="card-body">
+                <h1 class="text-center">Mensajes</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>                            
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Ciudad</th> 
+                            <th scope="col">Correo</th>
+                            <th scope="col">Mensaje</th>     
+                            {{!-- <th scope="col" class="text-center">Acción</th> --}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each admi}}
+                        <tr>
+                            <th scope="row">{{id_contacto}}</th>                            
+                            <td>{{Nombre}}</td>
+                            <td>{{Telefono}}</td> 
+                            <td>{{Ciudad}}</td>
+                            <td>{{Correo}}</td> 
+                            <td>{{Mensaje}}</td>                     
+                            <td>
+                                {{!-- <a href="edit/{{id_administrador}}" class="btn btn-info">Modificar</a>
+                                <a href="delete/{{id_administrador}}" class="btn btn-danger">Eliminar</a> --}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

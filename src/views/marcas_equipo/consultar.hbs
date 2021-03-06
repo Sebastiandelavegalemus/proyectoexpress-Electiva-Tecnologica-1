@@ -1,0 +1,79 @@
+<div class="col-md-8 mx-auto">
+            <div class="card-body">
+                <h1 class="text-center">Marcas De Equipos</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>                            
+                            <th scope="col">Nombre Del Producto</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col" class="text-center">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each peri}}
+                        <tr>
+                            <th scope="row">{{id_marcas_equipo}}</th>                            
+                            <td>{{nombre_producto}}</td>
+                            <td>{{descripcion}}</td>
+                            <td>{{precio}}</td>
+                            <td>{{imagen}}</td>             
+                            <td>
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modificar5{{id_marcas_equipo}}">
+                                Modificar
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modificar5{{id_marcas_equipo}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <form action="/marcas_equipo/modificar5/{{id_marcas_equipo}}" method="POST">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                    
+                                
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Nombre Del Producto</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    name="Nombre_producto" value="{{nombre_producto}}"> 
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Descripción</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    name="Descripcion" value="{{descripcion}}"> 
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Valor Del Producto</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    name="Precio" value="{{precio}}" >
+                                            </div>                                             
+                                            </div>     
+                                            <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+                                                    <button type="submit" class="btn btn-primary">Modificar</button>
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            <a href="delete/{{id_marcas_equipo}}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

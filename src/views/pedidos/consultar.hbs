@@ -1,0 +1,94 @@
+<div class="col-md-8 mx-auto">
+            <div class="card-body">
+                <h1 class="text-center">Pedidos</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>                            
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Codigo</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Valor Total</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col" class="text-center">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each pedi}}
+                        <tr>
+                            <th scope="row">{{id_pedidos}}</th>                            
+                            <td>{{usuario}}</td>
+                            <td>{{codigo_pedido}}</td>
+                            <td>{{cantidad}}</td>
+                            <td>{{valor_total}}</td>
+                            <td>{{estado}}</td>               
+                            <td>
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modificar8{{id_pedidos}}">
+                                Modificar
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="modificar8{{id_pedidos}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <form action="/pedidos/modificar8/{{id_pedidos}}" method="POST">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                    
+                                
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Nombre</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    name="usuario" value="{{usuario}}"> 
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Codigo</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    name="codigo_pedido" value="{{codigo_pedido}}"> 
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Cantidad</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    name="cantidad" value="{{cantidad}}" >
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Valor Total</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    name="valor_total" value="{{valor_total}}" >
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Estados</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    name="estado" value="{{estado}}" >
+                                            </div>  
+
+                                            </div>     
+                                            <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+                                                    <button type="submit" class="btn btn-primary">Modificar</button>
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            <a href="delete/{{id_pedidos}}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
